@@ -13,9 +13,7 @@ Consumer Data Right (CDR) Standards Bill of Materials (BOM) maven pom
 
 Maven pom descriptor BOM of all maven CDR components.
 
-It contains all the dependencies, their specific version.
-
-The idea is to avoid having each project importing a different version of a CDR component.
+Basically, the BOM allows add as many CDR dependencies as need without worrying about mixing bad versions.
 
 By sharing the same bom thru cdr projects, we can assure a certain consistency between the different CDR maven projects.
 
