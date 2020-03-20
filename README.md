@@ -15,8 +15,6 @@ Maven pom descriptor BOM of all maven CDR components.
 
 Basically, the BOM allows add as many CDR dependencies as need without worrying about mixing bad versions.
 
-By sharing the same bom thru cdr projects, we can assure a certain consistency between the different CDR maven projects.
-
 Consumer Data Right Standards: https://consumerdatastandardsaustralia.github.io/standards.
 
 ## Artifact
