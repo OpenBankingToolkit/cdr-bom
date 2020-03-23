@@ -17,7 +17,7 @@
     
     <properties>
         <!-- cdr components -->
-        <spring-security-multi-auth-starter.version>1.0.0</spring-security-multi-auth-starter.version>
+        <spring-security-multi-auth-starter.version>2.1.5.0.0.53</spring-security-multi-auth-starter.version>
         <eidas.psd2.cert.version>1.24</eidas.psd2.cert.version>
         <cdr.standards.model.version>1.0.0</cdr.standards.model.version>
         <!-- plugins -->
