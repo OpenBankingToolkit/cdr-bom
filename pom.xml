@@ -17,6 +17,7 @@
     
     <properties>
         <!-- cdr components -->
+        <spring-security-multi-auth-starter.version>1.0.0</spring-security-multi-auth-starter.version>
         <eidas.psd2.cert.version>1.24</eidas.psd2.cert.version>
         <cdr.standards.model.version>1.0.0</cdr.standards.model.version>
         <!-- plugins -->
@@ -28,6 +29,11 @@
     <dependencyManagement>
         <dependencies>
             <!-- openbanking -->
+            <dependency>
+                <groupId>dev.openbanking4.spring.security</groupId>
+                <artifactId>spring-security-multi-auth-starter</artifactId>
+                <version>${spring-security-multi-auth-starter.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.forgerock.openbanking</groupId>
                 <artifactId>eidas-psd2-cert</artifactId>
