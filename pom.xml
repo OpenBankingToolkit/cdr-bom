@@ -53,7 +53,7 @@
         <ob-clients.version>1.0.31</ob-clients.version>
         <cdr.standards.model.version>1.0.0</cdr.standards.model.version>
         <!-- plugins -->
-        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-release-plugin.version>3.0.0-M1</maven-release-plugin.version>
         <license-maven-plugin.version>3.0</license-maven-plugin.version>
     </properties>
 
@@ -189,6 +189,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>${maven-release-plugin.version}</version>
+                <configuration>
+                    <tagNameFormat>@{version}</tagNameFormat>
+                </configuration>
             </plugin>
         </plugins>
     </build>
