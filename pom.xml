@@ -1,31 +1,58 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<!--
+
+    Copyright 2020 ForgeRock AS.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <name>ForgeRock Consumer Data Right Standards - BOM</name>
     <groupId>com.forgerock.cdr.standards</groupId>
-    <artifactId>cdr-bom</artifactId>
+    <artifactId>cdr-standards-bom</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    
+
     <description>Consumer Data Right Standards Bill of Materials (BOM)</description>
-    
+
     <organization>
         <name>ForgeRock</name>
         <url>http://www.forgerock.org</url>
     </organization>
     <url>http://www.forgerock.org</url>
-    
+
     <properties>
         <!-- cdr components -->
-        <spring-security-multi-auth-starter.version>2.1.5.0.0.53</spring-security-multi-auth-starter.version>
+        <spring-security-multi-auth-starter.version>2.2.1.0.0.54</spring-security-multi-auth-starter.version>
         <eidas.psd2.cert.version>1.24</eidas.psd2.cert.version>
+        <ob-jwkms.version>1.1.67</ob-jwkms.version>
+        <ob-directory.version>1.4.69</ob-directory.version>
+        <ob-aspsp.version>1.0.77</ob-aspsp.version>
+        <ob-clients.version>1.0.31</ob-clients.version>
         <cdr.standards.model.version>1.0.0</cdr.standards.model.version>
         <!-- plugins -->
         <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <license-maven-plugin.version>3.0</license-maven-plugin.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     </properties>
-    
+
     <dependencyManagement>
         <dependencies>
             <!-- openbanking -->
@@ -39,6 +66,51 @@
                 <artifactId>eidas-psd2-cert</artifactId>
                 <version>${eidas.psd2.cert.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.clients</groupId>
+                <artifactId>forgerock-openbanking-analytics-webclient</artifactId>
+                <version>${ob-clients.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.jwkms</groupId>
+                <artifactId>forgerock-openbanking-jwkms-server</artifactId>
+                <version>${ob-jwkms.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.directory</groupId>
+                <artifactId>forgerock-openbanking-directory-server</artifactId>
+                <version>${ob-directory.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.aspsp</groupId>
+                <artifactId>forgerock-openbanking-cdr-aspsp-as-gateway-server</artifactId>
+                <version>${ob-aspsp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.aspsp</groupId>
+                <artifactId>forgerock-openbanking-cdr-aspsp-rs-gateway-server</artifactId>
+                <version>${ob-aspsp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.aspsp</groupId>
+                <artifactId>forgerock-openbanking-uk-aspsp-rs-rcs-server</artifactId>
+                <version>${ob-aspsp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.aspsp</groupId>
+                <artifactId>forgerock-openbanking-uk-aspsp-rs-mock-payment-simulator-server</artifactId>
+                <version>${ob-aspsp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.aspsp</groupId>
+                <artifactId>forgerock-openbanking-cdr-aspsp-rs-mock-store-server</artifactId>
+                <version>${ob-aspsp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.forgerock.openbanking.aspsp</groupId>
+                <artifactId>forgerock-openbanking-uk-aspsp-rs-mock-portal-server</artifactId>
+                <version>${ob-aspsp.version}</version>
+            </dependency>
             <!-- consumer data right -->
             <dependency>
                 <groupId>com.forgerock.cdr.standards</groupId>
@@ -48,45 +120,42 @@
         </dependencies>
     </dependencyManagement>
     <scm>
-        <connection>scm:git:https://github.com/OpenBankingToolkit/cdr-bom.git</connection>
-        <developerConnection>scm:git:https://github.com/OpenBankingToolkit/cdr-bom.git</developerConnection>
-        <url>https://github.com/OpenBankingToolkit/cdr-bom.git</url>
+        <connection>scm:git:https://github.com/OpenBankingToolkit/cdr-standards-bom.git</connection>
+        <developerConnection>scm:git:https://github.com/OpenBankingToolkit/cdr-standards-bom.git</developerConnection>
+        <url>https://github.com/OpenBankingToolkit/cdr-standards-bom.git</url>
         <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
         <repository>
-            <id>central</id>
+            <id>maven.forgerock.org-community</id>
             <name>maven.forgerock.org-releases</name>
             <url>https://maven.forgerock.org:443/repo/community</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
+            <id>maven.forgerock.org-community-snapshots</id>
             <name>maven.forgerock.org-snapshots</name>
             <url>https://maven.forgerock.org:443/repo/community</url>
         </snapshotRepository>
     </distributionManagement>
-    
+
     <repositories>
         <repository>
             <id>jcenter</id>
             <url>https://jcenter.bintray.com/</url>
         </repository>
         <repository>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-          <id>central</id>
-          <name>plugins</name>
-          <url>https://maven.forgerock.org:443</url>
+            <id>maven.forgerock.org-community</id>
+            <name>maven.forgerock.org-releases</name>
+            <url>https://maven.forgerock.org:443/repo/community</url>
         </repository>
         <repository>
-          <id>snapshots</id>
-          <name>plugins</name>
-          <url>https://maven.forgerock.org:443</url>
+            <id>maven.forgerock.org-community-snapshots</id>
+            <name>maven.forgerock.org-snapshots</name>
+            <url>https://maven.forgerock.org:443/repo/community</url>
         </repository>
     </repositories>
-    
+
     <build>
         <pluginManagement>
             <plugins>
@@ -138,5 +207,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>
