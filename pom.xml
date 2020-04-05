@@ -20,13 +20,14 @@
     under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
 
     <groupId>com.forgerock.cdr.standards</groupId>
     <artifactId>cdr-standards-bom</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ForgeRock Consumer Data Right Standards - BOM</name>
     <description>Consumer Data Right Standards Bill of Materials (BOM)</description>
@@ -40,7 +41,7 @@
         <connection>scm:git:git@github.com:OpenBankingToolkit/cdr-standards-bom.git</connection>
         <developerConnection>scm:git:git@github.com:OpenBankingToolkit/cdr-standards-bom.git</developerConnection>
         <url>https://github.com/OpenBankingToolkit/cdr-standards-bom.git</url>
-        <tag>cdr-standards-bom-1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
