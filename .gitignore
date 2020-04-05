@@ -4,3 +4,4 @@ release.properties
 # Intellij
 .idea/
 *.iml
+pom.xml.releaseBackup
